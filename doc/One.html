@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.3">
+    <meta name="project" content="one v0.1.0">
+    <title>One — one v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-0ab8a6a80ebaaa287431.css" />
+    <script src="dist/sidebar_items-072ebb15f7.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/app-a225d03098e64fef431a.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+one      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.1.0
+      </h2>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">one v0.1.0</small>
+One          <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+      </h1>
+
+
+        <section id="moduledoc">
+<p>1up Health API documentation</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#bulk_data_export/3">bulk_data_export(resource_urls, access_token, path \\ &quot;/tmp&quot;)</a>
+  </div>
+    <div class="summary-synopsis"><p>Request the analytics bulk-data endpoint with the FHIR® $export operator to retrieve bulk data files from urls
+obtained with extract_bulk_data_export_url function.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_new_user/3">create_new_user(app_user_id, client_id, client_secret)</a>
+  </div>
+    <div class="summary-synopsis"><p>  An application can create users via the following call.
+  You will need to replace client_id and client_secret with the values you obtained when you registered and created
+  your 1upHealth application (visit <a href="https://1up.health/dev/quick-start">https://1up.health/dev/quick-start</a>).</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_patient/2">create_patient(params, access_token)</a>
+  </div>
+    <div class="summary-synopsis"><p>  You will need to include your OAuth Access Token as a Bearer Token in the Authorization Header.
+  Once you have your OAuth Access Token, you can make the following call to create a FHIR Resource (in this case a
+  Patient resource, but you can also obtain other resources as listed here:
+  <a href="https://1up.health/dev/reference/fhir-resources">https://1up.health/dev/reference/fhir-resources</a>) by including the resource elements in the Body of the request</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#exchange_code_for_access_token/4">exchange_code_for_access_token(code, grant_type, client_id, client_secret)</a>
+  </div>
+    <div class="summary-synopsis"><p>  Use the following API call to exchange the OAuth Access Code received in  following cases</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#extract_bulk_data_export_url/2">extract_bulk_data_export_url(resources, access_token)</a>
+  </div>
+    <div class="summary-synopsis"><p>Request the analytics bulk-data endpoint with the FHIR® $export operator to retrieve a list of bulk data files for
+your client application to download.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#generate_new_code_for_existing_user/3">generate_new_code_for_existing_user(app_user_id, client_id, client_secret)</a>
+  </div>
+    <div class="summary-synopsis"><p>  If you need a new auth code for a user you already created on 1upHealth, you can make a request via the following
+  method with client_id and client_secret values replaced with your registered application&#39;s values.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_access_token_with_user_app_id/4">get_access_token_with_user_app_id(user_app_id, client_id, client_secret, grant_type)</a>
+  </div>
+    <div class="summary-synopsis"><p>Get new access token for an existing user with its user_app_id</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_all_connected_health_systems/2">get_all_connected_health_systems(client_id, client_secret)</a>
+  </div>
+    <div class="summary-synopsis"><p>Currently 1upHealth supports 1000s of health systems(<a href="https://1up.health/health-systems">https://1up.health/health-systems</a>).
+You can find the full list by querying the endpoint here.
+You will need the client_id and client_secret environment variables.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_all_patient/1">get_all_patient(access_token)</a>
+  </div>
+    <div class="summary-synopsis"><p>  You will need to include your OAuth Access Token as a Bearer Token in the Authorization Header.
+  Once you have your OAuth Access Token, you can make the following call to obtain a bundle of available FHIR Resources
+  (in this case Patient, but you can also obtain other resources as listed here:
+  <a href="https://1up.health/dev/reference/fhir-resources">https://1up.health/dev/reference/fhir-resources</a>).
+  You can also include <a href="https://api.1up.health/fhir/dstu2/Patient/{{resource_id">https://api.1up.health/fhir/dstu2/Patient/{{resource_id</a>}} when you know the resource id.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_patient_record/2">get_patient_record(patient_id, access_token)</a>
+  </div>
+    <div class="summary-synopsis"><p>You will need to include your OAuth Access Token as a Bearer Token in the Authorization Header and patient_id.
+then you can query the user resource for Patient by using patient ID and the user token. You’ll only see basic data
+with this endpoint. Once you add a health system EHR, you’ll query other endpoints to get more data.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#provider_search/2">provider_search(access_token, params)</a>
+  </div>
+    <div class="summary-synopsis"><p>The Provider Search API can be used to make custom provider search interface for patients or retrieve results returned
+from connected health systems. Plug the access_token with the client_id and client_secret for the application in the
+header as a Bearer Token and search term as a query parameter in the url.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#refresh_access_token/4">refresh_access_token(refresh_token, grant_type, client_id, client_secret)</a>
+  </div>
+    <div class="summary-synopsis"><p>  Once 7200 seconds passes (which is 2 hours), the access_token will no longer be valid.To get a new token, you can
+  either use the refresh token you received with <code class="inline">exchange_code_for_access_token</code> method.
+  You must also replace the values for client_id and client_secret with values obtained when registering your
+  application (visit <a href="https://1up.health/dev/quick-start">https://1up.health/dev/quick-start</a>).</p></div>
+</div>
+  </div>
+        </section>
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="bulk_data_export/3">
+    <span id="bulk_data_export/2"></span>
+  <div class="detail-header">
+    <a href="#bulk_data_export/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">bulk_data_export(resource_urls, access_token, path \\ &quot;/tmp&quot;)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L306" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>Request the analytics bulk-data endpoint with the FHIR® $export operator to retrieve bulk data files from urls
+obtained with extract_bulk_data_export_url function.</p>
+  </section>
+</section>
+<section class="detail" id="create_new_user/3">
+  <div class="detail-header">
+    <a href="#create_new_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_new_user(app_user_id, client_id, client_secret)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L24" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>  An application can create users via the following call.
+  You will need to replace client_id and client_secret with the values you obtained when you registered and created
+  your 1upHealth application (visit <a href="https://1up.health/dev/quick-start">https://1up.health/dev/quick-start</a>).</p>
+<p>  Each response will contain the new user&#39;s oneup_user_id, access_token, refresh_token, and app_user_id.
+  The app_user_id helps you keep track of users between the 1up API and your own user management system.
+  This must be a unique value for your application.</p>
+  </section>
+</section>
+<section class="detail" id="create_patient/2">
+  <div class="detail-header">
+    <a href="#create_patient/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_patient(params, access_token)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L157" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>  You will need to include your OAuth Access Token as a Bearer Token in the Authorization Header.
+  Once you have your OAuth Access Token, you can make the following call to create a FHIR Resource (in this case a
+  Patient resource, but you can also obtain other resources as listed here:
+  <a href="https://1up.health/dev/reference/fhir-resources">https://1up.health/dev/reference/fhir-resources</a>) by including the resource elements in the Body of the request</p>
+  </section>
+</section>
+<section class="detail" id="exchange_code_for_access_token/4">
+  <div class="detail-header">
+    <a href="#exchange_code_for_access_token/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">exchange_code_for_access_token(code, grant_type, client_id, client_secret)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L91" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>  Use the following API call to exchange the OAuth Access Code received in  following cases:</p>
+<ol>
+<li>Create New User or
+</li>
+<li><p>Generate New Auth Code for Existing User.</p>
+<p>The code variable is the OAuth2 access code. You must exchange that to get the OAuth2 access token by following the
+the OAuth2 token grant steps. The access_token and refresh_token will be used to gain access to user data.
+Keep those secure via HIPAA compliant means of transmission and storage, along with all other patient data.
+The auth token expires after 7200 seconds (2 hours).</p>
+<p>You must also replace the values for client_id and client_secret with values obtained when registering your
+application (visit <a href="https://1up.health/dev/quick-start">https://1up.health/dev/quick-start</a>).</p>
+</li>
+</ol>
+  </section>
+</section>
+<section class="detail" id="extract_bulk_data_export_url/2">
+  <div class="detail-header">
+    <a href="#extract_bulk_data_export_url/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">extract_bulk_data_export_url(resources, access_token)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L283" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>Request the analytics bulk-data endpoint with the FHIR® $export operator to retrieve a list of bulk data files for
+your client application to download.</p>
+<p><a href="https://1up.health/dev/doc/fhir-bulk-data-export">https://1up.health/dev/doc/fhir-bulk-data-export</a></p>
+<p>This will return at least one bulk data download url for each resource type for which resources exist. This will only
+return resources that your given application client id and user id have access to. Optionally include a _type query
+parameter with a comma-separated list of FHIR® resources to limit the types of resources that you want to export, e.g.</p>
+<p><a href="https://analytics.1up.health/bulk-data/dstu2/$export?_type=Patient,Observation">https://analytics.1up.health/bulk-data/dstu2/$export?_type=Patient,Observation</a></p>
+  </section>
+</section>
+<section class="detail" id="generate_new_code_for_existing_user/3">
+  <div class="detail-header">
+    <a href="#generate_new_code_for_existing_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">generate_new_code_for_existing_user(app_user_id, client_id, client_secret)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L56" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>  If you need a new auth code for a user you already created on 1upHealth, you can make a request via the following
+  method with client_id and client_secret values replaced with your registered application&#39;s values.</p>
+<p>  The code variable is the OAuth2 access code. You must exchange that to get the OAuth2 access token by following the
+  the OAuth2 token grant steps. The access_token and refresh_token will be used to gain access to user data. Keep
+  those secure via HIPAA compliant means of transmission and storage, along with all other patient data.
+  The auth token expires after 7200 seconds (2 hours).</p>
+  </section>
+</section>
+<section class="detail" id="get_access_token_with_user_app_id/4">
+  <div class="detail-header">
+    <a href="#get_access_token_with_user_app_id/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_access_token_with_user_app_id(user_app_id, client_id, client_secret, grant_type)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L326" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>Get new access token for an existing user with its user_app_id</p>
+  </section>
+</section>
+<section class="detail" id="get_all_connected_health_systems/2">
+  <div class="detail-header">
+    <a href="#get_all_connected_health_systems/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_all_connected_health_systems(client_id, client_secret)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L255" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>Currently 1upHealth supports 1000s of health systems(<a href="https://1up.health/health-systems">https://1up.health/health-systems</a>).
+You can find the full list by querying the endpoint here.
+You will need the client_id and client_secret environment variables.</p>
+  </section>
+</section>
+<section class="detail" id="get_all_patient/1">
+  <div class="detail-header">
+    <a href="#get_all_patient/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_all_patient(access_token)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L234" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>  You will need to include your OAuth Access Token as a Bearer Token in the Authorization Header.
+  Once you have your OAuth Access Token, you can make the following call to obtain a bundle of available FHIR Resources
+  (in this case Patient, but you can also obtain other resources as listed here:
+  <a href="https://1up.health/dev/reference/fhir-resources">https://1up.health/dev/reference/fhir-resources</a>).
+  You can also include <a href="https://api.1up.health/fhir/dstu2/Patient/{{resource_id">https://api.1up.health/fhir/dstu2/Patient/{{resource_id</a>}} when you know the resource id.</p>
+  </section>
+</section>
+<section class="detail" id="get_patient_record/2">
+  <div class="detail-header">
+    <a href="#get_patient_record/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_patient_record(patient_id, access_token)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L208" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>You will need to include your OAuth Access Token as a Bearer Token in the Authorization Header and patient_id.
+then you can query the user resource for Patient by using patient ID and the user token. You’ll only see basic data
+with this endpoint. Once you add a health system EHR, you’ll query other endpoints to get more data.</p>
+  </section>
+</section>
+<section class="detail" id="provider_search/2">
+  <div class="detail-header">
+    <a href="#provider_search/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">provider_search(access_token, params)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>The Provider Search API can be used to make custom provider search interface for patients or retrieve results returned
+from connected health systems. Plug the access_token with the client_id and client_secret for the application in the
+header as a Bearer Token and search term as a query parameter in the url.</p>
+<p><a href="https://1up.health/dev/doc/provider-search-ui">https://1up.health/dev/doc/provider-search-ui</a></p>
+<p>Result is a list a health systems, clinics, hospitals or doctors for the searched term with 1up health system id which
+can be used to direct an user to a quick connect page or a patient portal (using the same access token) to initiate
+the login process.</p>
+  </section>
+</section>
+<section class="detail" id="refresh_access_token/4">
+  <div class="detail-header">
+    <a href="#refresh_access_token/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">refresh_access_token(refresh_token, grant_type, client_id, client_secret)</h1>
+      <a href="https://github.com/alikopol/one/blob/master/lib/one.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+  <section class="docstring">
+<p>  Once 7200 seconds passes (which is 2 hours), the access_token will no longer be valid.To get a new token, you can
+  either use the refresh token you received with <code class="inline">exchange_code_for_access_token</code> method.
+  You must also replace the values for client_id and client_secret with values obtained when registering your
+  application (visit <a href="https://1up.health/dev/quick-start">https://1up.health/dev/quick-start</a>).</p>
+  </section>
+</section>
+          </div>
+        </section>
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.3),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  </body>
+</html>
